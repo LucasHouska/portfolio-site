@@ -1,0 +1,55 @@
+nav {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  position: fixed; /* Fixes the header at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensures the header spans the full width of the page */
+  z-index: 1000; /* Ensures the header stays above other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: right;
+  margin: 0 3%;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #00bcd4;
+}
+
+body {
+  padding-top: 4rem; /* Adds padding to prevent content from being hidden under the fixed header */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    margin: 0;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0; /* Add spacing between items */
+  }
+
+  nav ul li a {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+}
