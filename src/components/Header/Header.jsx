@@ -7,6 +7,7 @@ function Header() {
       <ul>
         <li>
           <Link to="/">Home</Link>
+          <Link to="/projects">Projects</Link>
         </li>
       </ul>
     </nav>
