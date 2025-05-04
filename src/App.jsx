@@ -1,22 +1,22 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home/Home"
-import Header from "./components/Header/Header"
-import './App.css'
+import Home from "./components/Home/Home";
+import Header from "./components/Header/Header";
 import ProjectsPage from "./components/ProjectsPage/ProjectsPage";
+import "./App.css";
 
-function App() {
-
+const App = () => {
   return (
     <>
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-        </Routes>
-      </Router>
+      <Header />
+      <main>
+        <section id="home">
+          <Home />
+        </section>
+        <section id="projects">
+          <ProjectsPage />
+        </section>
+      </main>
     </>
   );
 }
 
-export default App
+export default App;

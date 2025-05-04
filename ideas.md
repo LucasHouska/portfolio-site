@@ -1,0 +1,3 @@
+Have it scroll sideways, have stationary background, slowly moving background, faster moving ground, and faster still foreground as the user scrolls. Simulating movement. In my head, bigfoot is strolling through the woods (pixelated) and comes across things. Campsite, which hosts a posting board of all my projects, a pond with an about me section coming out of it like a Star Wars scrolling text section. Making it interactive and fun. Kind of looking like the game Kingdom Two Crowns.
+
+But first, make it functional.

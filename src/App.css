@@ -3,4 +3,29 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  overflow-y: hidden;
 }
+
+/* main {
+  display: flex;
+  flex-direction: row;
+  width: 200vw;
+  height: 100vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  flex: 0 0 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main::-webkit-scrollbar {
+  display: none;
+} */

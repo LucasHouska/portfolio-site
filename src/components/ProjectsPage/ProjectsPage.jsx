@@ -1,23 +1,33 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function ProjectsPage() {
+const ProjectsPage = () => {
   const [repos, setRepos] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const response = await axios.get(
-          "https://api.github.com/users/YOUR_USERNAME/repos",
-          {
-            headers: {
-              Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
-            },
-          }
+        const headers = {};
+
+        if (import.meta.env.REACT_APP_GITHUB_TOKEN) {
+          headers.Authorization = `token ${
+            import.meta.env.REACT_APP_GITHUB_TOKEN
+          }`;
+        }
+
+        const repoNames = ["Allen", "meal-planner", "stuff-to-do-finder"];
+        const repoRequests = repoNames.map((repo) =>
+          axios.get(`https://api.github.com/repos/LucasHouska/${repo}`, {
+            headers,
+          })
         );
-        setRepos(response.data);
-      } catch (error) {
-        console.error("Error fetching repositories:", error);
+
+        const responses = await Promise.all(repoRequests);
+        setRepos(responses.map((res) => res.data));
+      } catch (err) {
+        console.error("Error fetching repositories:", err);
+        setError("Something went wrong fetching repositories. Please try again later.");
       }
     };
 
@@ -27,6 +37,7 @@ function ProjectsPage() {
   return (
     <div>
       <h1>My Projects</h1>
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <ul>
         {repos.map((repo) => (
           <li key={repo.id}>
