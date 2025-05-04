@@ -3,6 +3,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <header>
+      <h3>Site currently under construction</h3>
       <nav>
         <ul>
           <li>
@@ -15,6 +16,6 @@ const Header = () => {
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

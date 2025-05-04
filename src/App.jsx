@@ -1,7 +1,8 @@
+import "./App.css";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import ProjectsPage from "./components/ProjectsPage/ProjectsPage";
-import "./App.css";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -15,8 +16,9 @@ const App = () => {
           <ProjectsPage />
         </section>
       </main>
+      <Footer />
     </>
   );
-}
+};
 
 export default App;

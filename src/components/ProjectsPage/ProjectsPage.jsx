@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./ProjectsPage.css";
 import axios from "axios";
 
 const ProjectsPage = () => {
@@ -16,7 +17,13 @@ const ProjectsPage = () => {
           }`;
         }
 
-        const repoNames = ["Allen", "meal-planner", "stuff-to-do-finder"];
+        const repoNames = [
+          "Allen",
+          "meal-planner",
+          "stuff-to-do-finder",
+          "Work-IN",
+          "library-of-life",
+        ];
         const repoRequests = repoNames.map((repo) =>
           axios.get(`https://api.github.com/repos/LucasHouska/${repo}`, {
             headers,
@@ -27,7 +34,9 @@ const ProjectsPage = () => {
         setRepos(responses.map((res) => res.data));
       } catch (err) {
         console.error("Error fetching repositories:", err);
-        setError("Something went wrong fetching repositories. Please try again later.");
+        setError(
+          "Something went wrong fetching repositories. Please try again later."
+        );
       }
     };
 
@@ -35,7 +44,7 @@ const ProjectsPage = () => {
   }, []);
 
   return (
-    <div>
+    <div id="projects-page">
       <h1>My Projects</h1>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <ul>
@@ -49,6 +58,6 @@ const ProjectsPage = () => {
       </ul>
     </div>
   );
-}
+};
 
 export default ProjectsPage;
